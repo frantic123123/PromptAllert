@@ -1,4 +1,5 @@
 function enterDate() {
+    const date = new Date();
     let birnDate = prompt('Your year of birth?');
     if (birnDate === null) {
         return alert("it's a pity that you did not want to enter your age");
@@ -7,7 +8,7 @@ function enterDate() {
         alert('please enter a number');
         return enterDate();
     }
-    alert(`Your age in this year is ${2023 - birnDate}`)
+    alert(`Your age in this year is ${date.getFullYear() - birnDate}`)
 }
 enterDate();
 
