@@ -101,13 +101,15 @@ const multiplyTable = document.getElementById('multiplication-table');
 let table = '';
 
 for (let i = 1; i <= 10; i++) {
-    for (let multiplier = 1; multiplier <= 10; multiplier++) {
-        if (multiplier === 10) {
-            table += `${i} * ${multiplier} = ${i * multiplier}; <hr/>`;
-            break;
+    (function (numb) {
+        for (let multiplier = 1; multiplier <= 10; multiplier++) {
+            if (multiplier === 10) {
+                table += `${numb} * ${multiplier} = ${numb * multiplier}; <hr/>`;
+                break;
+            }
+            table += `${numb} * ${multiplier} = ${numb * multiplier}; <br/>`;
         }
-        table += `${i} * ${multiplier} = ${i * multiplier}; <br/>`;
-    }
+    }(i));
 }
 multiplyTable.innerHTML = table;
 
