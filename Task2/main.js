@@ -13,7 +13,7 @@ console.log(squareNumbers.toString(','));
 
 
 let i = 1;
-while(i < 11) {
+while(i <= 10) {
     console.log(`${i} * 7 = ${i * 7}`);
     i++;
 }
@@ -21,7 +21,7 @@ while(i < 11) {
 ///////------- Sum
 
 let sum = 0;
-for (let i = 1; i < 16; i++) {
+for (let i = 1; i <= 15; i++) {
     sum += i;
 }
 console.log(sum);
@@ -39,10 +39,10 @@ console.log(multiply);
 
 const getMiddleNumber = (startNum, endNum) => {
     let sumOfNumbers = 0;
-    for (let i = startNum; i < endNum; i++) {
+    for (let i = startNum; i <= endNum; i++) {
         sumOfNumbers += i;
     }
-    const middleNumber = sumOfNumbers / --endNum;
+    const middleNumber = sumOfNumbers / endNum;
     return middleNumber;
 }
 
