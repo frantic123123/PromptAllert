@@ -97,20 +97,49 @@ resultDividers.innerHTML = searchDividers(24);
 
 
 //////////------------ multiplication table
-const multiplyTable = document.getElementById('multiplication-table');
-let table = '';
+// const multiplyTable = document.getElementById('multiplication-table');
 
-for (let i = 1; i <= 10; i++) {
-    (function (numb) {
-        for (let multiplier = 1; multiplier <= 10; multiplier++) {
-            if (multiplier === 10) {
-                table += `${numb} * ${multiplier} = ${numb * multiplier}; <hr/>`;
-                break;
-            }
-            table += `${numb} * ${multiplier} = ${numb * multiplier}; <br/>`;
+// function multTable(x, y) {
+//     let table = '';
+
+//     function multiplyNumbers(value) {
+//         for (let i = 1; i <= x; i++) {
+//             if (i === x) {
+//                 table += `${value} * ${i} = ${value * i}; <hr/>`;
+//                 break;
+//             }
+//             table += `${value} * ${i} = ${value * i}; &nbsp&nbsp`;
+//         }
+//     };
+
+//     for (let i = 1; i <= y; i++) {
+//         multiplyNumbers(i);
+//     }
+
+//     return table;
+// }
+
+// multiplyTable.innerHTML = multTable(3, 5);
+
+
+function multTable(x, y) {
+    const result = [];
+
+    function multiplyNumbers(value) {
+        const stringResult = [];
+        for (let i = 1; i <= x; i++) {
+            stringResult.push(`${value} * ${i} = ${value * i}`);
         }
-    }(i));
+        return stringResult;
+    };
+
+    for (let i = 1; i <= y; i++) {
+        result.push(multiplyNumbers(i));
+    }
+
+    return result;
 }
-multiplyTable.innerHTML = table;
+
+console.log(multTable(5, 5));
 
 
